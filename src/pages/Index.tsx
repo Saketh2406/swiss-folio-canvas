@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -146,7 +145,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center w-full">
             <div className="flex justify-center md:justify-start">
               <Avatar className="w-40 h-40 animate-fade-in transition-opacity duration-500">
-                <AvatarImage src="/placeholder.svg" alt="Saketh Reddy Sadu" />
+                <AvatarImage src="/lovable-uploads/e3d7fb80-60f6-4a27-b75e-aeefb76b6d82.png" alt="Saketh Reddy Sadu" />
                 <AvatarFallback className="text-3xl bg-gray-100 text-gray-600">SR</AvatarFallback>
               </Avatar>
             </div>
