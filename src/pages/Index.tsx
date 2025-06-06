@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
-import { Github, Mail, ExternalLink } from "lucide-react";
+import { Github, Mail, ExternalLink, Award, Users, Code2 } from "lucide-react";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('hero');
@@ -99,10 +99,76 @@ const Index = () => {
            formData.message.trim().length >= 10;
   };
 
-  const skills = [
-    'AWS', 'Terraform', 'Jenkins', 'GitHub Actions', 'Docker', 'Kubernetes',
-    'Ansible', 'Python', 'Bash', 'PowerShell', 'CloudWatch', 'OpenSearch',
-    'GitLab CI/CD', 'Linux', 'Windows', 'RBAC', 'MFA', 'Azure Active Directory', 'GCP'
+  const awsSkills = [
+    'IAM', 'EC2', 'S3', 'VPC', 'RDS', 'Lambda', 'CloudFormation', 'CloudWatch', 
+    'SNS', 'SQS', 'EKS', 'ELB', 'Route 53', 'CloudTrail'
+  ];
+
+  const azureSkills = [
+    'Azure AD (Entra ID)', 'ADFS', 'SSO'
+  ];
+
+  const gcpSkills = [
+    'Compute Engine', 'IAM'
+  ];
+
+  const iacDevOpsSkills = [
+    'Terraform', 'CloudFormation', 'Ansible', 'Docker', 'Kubernetes (EKS, Helm)',
+    'Jenkins', 'GitHub Actions', 'GitLab CI/CD'
+  ];
+
+  const programmingSkills = [
+    'Python', 'Bash', 'PowerShell', 'Linux Administration', 'Git'
+  ];
+
+  const monitoringSkills = [
+    'OpenSearch', 'Prometheus', 'Grafana', 'ELK Stack', 'Nginx', 'Load Balancing',
+    'Auto Scaling', 'Monitoring & Logging'
+  ];
+
+  const securitySkills = [
+    'RBAC', 'MFA', 'PIM', 'Conditional Access', 'Backup & Disaster Recovery',
+    'Incident Response'
+  ];
+
+  const managementSkills = [
+    'Agile/Scrum', 'Confluence', 'JIRA', 'ServiceNow'
+  ];
+
+  const certifications = [
+    {
+      name: "AWS Solutions Architect Associate",
+      status: "In Progress",
+      description: "Comprehensive AWS cloud architecture and best practices"
+    },
+    {
+      name: "Certified Kubernetes Administrator (CKA)",
+      status: "Planned",
+      description: "Container orchestration and cluster management"
+    },
+    {
+      name: "HashiCorp Terraform Associate",
+      status: "Planned", 
+      description: "Infrastructure as Code fundamentals"
+    }
+  ];
+
+  const achievements = [
+    {
+      icon: <Award className="w-8 h-8" />,
+      title: "Cost Optimization Initiative",
+      description: "Reduced AWS infrastructure costs by 35% through resource optimization and right-sizing"
+    },
+    {
+      icon: <Users className="w-8 h-8" />,
+      title: "Team Collaboration",
+      description: "Led cross-functional teams in implementing DevOps best practices across multiple projects"
+    },
+    {
+      icon: <Code2 className="w-8 h-8" />,
+      title: "Automation Excellence",
+      description: "Automated 90% of manual deployment processes, reducing deployment time from hours to minutes"
+    }
   ];
 
   return (
@@ -189,17 +255,182 @@ const Index = () => {
         </section>
 
         {/* Skills Section */}
-        <section id="skills" className="py-12">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-12 text-center">Skills & Expertise</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {skills.map((skill) => (
-              <Badge
-                key={skill}
-                variant="outline"
-                className="py-2 px-4 text-center border-gray-300 text-gray-700 hover:bg-gray-100 transition-all duration-200 cursor-default"
-              >
-                {skill}
-              </Badge>
+        <section id="skills" className="py-16">
+          <h2 className="text-3xl font-semibold text-gray-900 mb-16 text-center">Skills & Expertise</h2>
+          
+          <div className="space-y-12">
+            {/* AWS Skills */}
+            <div className="space-y-6">
+              <h3 className="text-xl font-semibold text-gray-800 text-center">Amazon Web Services (AWS)</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                {awsSkills.map((skill) => (
+                  <Badge
+                    key={skill}
+                    variant="outline"
+                    className="py-3 px-4 text-center border-blue-200 text-blue-700 hover:bg-blue-50 transition-all duration-200 cursor-default"
+                  >
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+
+            {/* Azure & GCP */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="space-y-6">
+                <h3 className="text-xl font-semibold text-gray-800 text-center">Microsoft Azure</h3>
+                <div className="grid grid-cols-1 gap-4">
+                  {azureSkills.map((skill) => (
+                    <Badge
+                      key={skill}
+                      variant="outline"
+                      className="py-3 px-4 text-center border-indigo-200 text-indigo-700 hover:bg-indigo-50 transition-all duration-200 cursor-default"
+                    >
+                      {skill}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+              <div className="space-y-6">
+                <h3 className="text-xl font-semibold text-gray-800 text-center">Google Cloud Platform (GCP)</h3>
+                <div className="grid grid-cols-1 gap-4">
+                  {gcpSkills.map((skill) => (
+                    <Badge
+                      key={skill}
+                      variant="outline"
+                      className="py-3 px-4 text-center border-green-200 text-green-700 hover:bg-green-50 transition-all duration-200 cursor-default"
+                    >
+                      {skill}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Infrastructure & DevOps */}
+            <div className="space-y-6">
+              <h3 className="text-xl font-semibold text-gray-800 text-center">Infrastructure as Code & DevOps</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                {iacDevOpsSkills.map((skill) => (
+                  <Badge
+                    key={skill}
+                    variant="outline"
+                    className="py-3 px-4 text-center border-purple-200 text-purple-700 hover:bg-purple-50 transition-all duration-200 cursor-default"
+                  >
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+
+            {/* Programming & Scripting */}
+            <div className="space-y-6">
+              <h3 className="text-xl font-semibold text-gray-800 text-center">Programming & Scripting</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                {programmingSkills.map((skill) => (
+                  <Badge
+                    key={skill}
+                    variant="outline"
+                    className="py-3 px-4 text-center border-orange-200 text-orange-700 hover:bg-orange-50 transition-all duration-200 cursor-default"
+                  >
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+
+            {/* Monitoring & Observability */}
+            <div className="space-y-6">
+              <h3 className="text-xl font-semibold text-gray-800 text-center">Monitoring & Observability</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                {monitoringSkills.map((skill) => (
+                  <Badge
+                    key={skill}
+                    variant="outline"
+                    className="py-3 px-4 text-center border-teal-200 text-teal-700 hover:bg-teal-50 transition-all duration-200 cursor-default"
+                  >
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+
+            {/* Security & Compliance */}
+            <div className="space-y-6">
+              <h3 className="text-xl font-semibold text-gray-800 text-center">Security & Compliance</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                {securitySkills.map((skill) => (
+                  <Badge
+                    key={skill}
+                    variant="outline"
+                    className="py-3 px-4 text-center border-red-200 text-red-700 hover:bg-red-50 transition-all duration-200 cursor-default"
+                  >
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+
+            {/* Project Management */}
+            <div className="space-y-6">
+              <h3 className="text-xl font-semibold text-gray-800 text-center">Project Management & Collaboration</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                {managementSkills.map((skill) => (
+                  <Badge
+                    key={skill}
+                    variant="outline"
+                    className="py-3 px-4 text-center border-gray-300 text-gray-700 hover:bg-gray-100 transition-all duration-200 cursor-default"
+                  >
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Certifications Section */}
+        <section id="certifications" className="py-16">
+          <h2 className="text-3xl font-semibold text-gray-900 mb-12 text-center">Certifications & Learning Path</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {certifications.map((cert, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow duration-200 border-gray-200">
+                <CardHeader className="text-center pb-4">
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Award className="w-8 h-8 text-blue-600" />
+                  </div>
+                  <CardTitle className="text-lg font-semibold text-gray-900">{cert.name}</CardTitle>
+                  <Badge 
+                    variant={cert.status === 'In Progress' ? 'default' : 'outline'} 
+                    className="mx-auto mt-2"
+                  >
+                    {cert.status}
+                  </Badge>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-700 text-sm text-center leading-relaxed">{cert.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* Achievements Section */}
+        <section id="achievements" className="py-16">
+          <h2 className="text-3xl font-semibold text-gray-900 mb-12 text-center">Key Achievements</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {achievements.map((achievement, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow duration-200 border-gray-200 text-center">
+                <CardHeader>
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 text-green-600">
+                    {achievement.icon}
+                  </div>
+                  <CardTitle className="text-lg font-semibold text-gray-900">{achievement.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-700 leading-relaxed">{achievement.description}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </section>
