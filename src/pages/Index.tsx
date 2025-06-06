@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
-import { Github, Mail, ExternalLink, Award, Users, Code2, Cloud, Shield, Settings } from "lucide-react";
+import { Github, Mail, ExternalLink, Award, Users, Code2, Cloud, Shield, Settings, Phone } from "lucide-react";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('hero');
@@ -232,7 +232,7 @@ const Index = () => {
               
               <div className="flex space-x-6 pt-6">
                 <a
-                  href="https://github.com/saketh-reddy"
+                  href="https://github.com/Saketh2406"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-gray-900 transform hover:scale-110 transition-all duration-200"
@@ -247,14 +247,35 @@ const Index = () => {
                 >
                   <Mail size={36} />
                 </a>
+                <a
+                  href="tel:3143350950"
+                  className="text-gray-600 hover:text-gray-900 transform hover:scale-110 transition-all duration-200"
+                  aria-label="Phone"
+                >
+                  <Phone size={36} />
+                </a>
               </div>
               
-              <Button 
-                className="bg-gray-900 hover:bg-gray-800 text-white px-10 py-4 text-xl rounded-lg shadow-lg hover:shadow-xl transition-all duration-200"
-                onClick={() => scrollToSection('contact')}
-              >
-                Get In Touch
-              </Button>
+              <div className="space-y-3 pt-4">
+                <div className="flex items-center space-x-3">
+                  <Mail className="w-5 h-5 text-gray-600" />
+                  <a 
+                    href="mailto:sakethsadu@gmail.com"
+                    className="text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200"
+                  >
+                    sakethsadu@gmail.com
+                  </a>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Phone className="w-5 h-5 text-gray-600" />
+                  <a 
+                    href="tel:3143350950"
+                    className="text-lg text-gray-700 hover:text-blue-600 transition-colors duration-200"
+                  >
+                    (314) 335-0950
+                  </a>
+                </div>
+              </div>
             </div>
 
             {/* Right Column - Professional Photo */}
