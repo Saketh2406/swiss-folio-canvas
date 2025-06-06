@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -6,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
-import { Github, Mail, ExternalLink, Award, Users, Code2 } from "lucide-react";
+import { Github, Mail, ExternalLink, Award, Users, Code2, Cloud, Shield, Settings } from "lucide-react";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('hero');
@@ -196,24 +197,40 @@ const Index = () => {
 
       {/* Container */}
       <div className="max-w-6xl mx-auto px-6">
-        {/* Hero Section - Updated Layout */}
-        <section id="hero" className="pt-24 pb-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[70vh]">
+        {/* Hero Section - Updated with new photo and floating text */}
+        <section id="hero" className="pt-24 pb-20 relative overflow-hidden">
+          {/* Floating text elements */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-32 left-8 text-blue-100 text-sm font-medium animate-pulse">
+              <Cloud className="w-6 h-6 inline mr-2" />
+              Cloud Infrastructure
+            </div>
+            <div className="absolute top-48 right-12 text-green-100 text-sm font-medium animate-pulse delay-1000">
+              <Settings className="w-6 h-6 inline mr-2" />
+              DevOps Automation
+            </div>
+            <div className="absolute bottom-32 left-16 text-purple-100 text-sm font-medium animate-pulse delay-2000">
+              <Shield className="w-6 h-6 inline mr-2" />
+              Security Best Practices
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[70vh] relative z-10">
             {/* Left Column - Content */}
             <div className="space-y-8 lg:pr-8">
               <div className="space-y-6">
-                <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                <h1 className="text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
                   Saketh Reddy Sadu
                 </h1>
-                <h2 className="text-xl lg:text-2xl text-gray-600 leading-relaxed">
+                <h2 className="text-2xl lg:text-3xl text-gray-600 leading-relaxed font-medium">
                   DevOps Engineer specializing in Cloud Infrastructure & Security
                 </h2>
-                <p className="text-lg text-gray-700 leading-relaxed max-w-lg">
+                <p className="text-xl text-gray-700 leading-relaxed max-w-lg">
                   Experienced in automating cloud infrastructure, implementing security best practices, and optimizing system reliability through modern DevOps methodologies.
                 </p>
               </div>
               
-              <div className="flex space-x-6 pt-4">
+              <div className="flex space-x-6 pt-6">
                 <a
                   href="https://github.com/saketh-reddy"
                   target="_blank"
@@ -221,38 +238,39 @@ const Index = () => {
                   className="text-gray-600 hover:text-gray-900 transform hover:scale-110 transition-all duration-200"
                   aria-label="GitHub"
                 >
-                  <Github size={32} />
+                  <Github size={36} />
                 </a>
                 <a
                   href="mailto:sakethsadu@gmail.com"
                   className="text-gray-600 hover:text-gray-900 transform hover:scale-110 transition-all duration-200"
                   aria-label="Email"
                 >
-                  <Mail size={32} />
+                  <Mail size={36} />
                 </a>
               </div>
               
               <Button 
-                className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-3 text-lg rounded-md"
+                className="bg-gray-900 hover:bg-gray-800 text-white px-10 py-4 text-xl rounded-lg shadow-lg hover:shadow-xl transition-all duration-200"
                 onClick={() => scrollToSection('contact')}
               >
                 Get In Touch
               </Button>
             </div>
 
-            {/* Right Column - Photo */}
+            {/* Right Column - Professional Photo */}
             <div className="flex justify-center lg:justify-end">
               <div className="relative">
-                <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden shadow-2xl">
+                <div className="w-96 h-[500px] lg:w-[450px] lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
                   <img 
-                    src="/lovable-uploads/3aca41db-172d-45a7-8c19-79cc8f1f09cc.png" 
-                    alt="Saketh Reddy Sadu" 
+                    src="/lovable-uploads/3f2821ca-341d-4a8d-9a5a-e06f77c06882.png" 
+                    alt="Saketh Reddy Sadu - Professional DevOps Engineer" 
                     className="w-full h-full object-cover"
                   />
                 </div>
-                {/* Decorative element */}
-                <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-blue-100 rounded-full opacity-60"></div>
-                <div className="absolute -top-4 -left-4 w-16 h-16 bg-gray-100 rounded-full opacity-40"></div>
+                {/* Decorative elements */}
+                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-100 rounded-full opacity-60 animate-pulse"></div>
+                <div className="absolute -top-6 -left-6 w-24 h-24 bg-gray-100 rounded-full opacity-40 animate-pulse delay-1000"></div>
+                <div className="absolute top-1/2 -right-4 w-16 h-16 bg-green-100 rounded-full opacity-50 animate-pulse delay-2000"></div>
               </div>
             </div>
           </div>
