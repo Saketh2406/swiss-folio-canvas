@@ -195,50 +195,82 @@ const Index = () => {
       </nav>
 
       {/* Container */}
-      <div className="max-w-4xl mx-auto px-6">
-        {/* Hero Section */}
-        <section id="hero" className="pt-24 pb-16">
-          <div className="flex flex-col items-center text-center space-y-8">
-            <Avatar className="w-56 h-56 animate-fade-in transition-opacity duration-500">
-              <AvatarImage src="/lovable-uploads/39d8779b-d282-4de2-b07a-fb1f0350a4d7.png" alt="Saketh Reddy Sadu" />
-              <AvatarFallback className="text-4xl bg-gray-100 text-gray-600">SR</AvatarFallback>
-            </Avatar>
-            <div className="space-y-6">
-              <h1 className="text-6xl font-semibold text-gray-900">Saketh Reddy Sadu</h1>
-              <p className="text-2xl text-gray-600 leading-relaxed max-w-2xl">
-                DevOps Engineer specializing in Cloud Infrastructure & Security
-              </p>
-              <div className="flex justify-center space-x-8 pt-4">
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Hero Section - Updated Layout */}
+        <section id="hero" className="pt-24 pb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[70vh]">
+            {/* Left Column - Content */}
+            <div className="space-y-8 lg:pr-8">
+              <div className="space-y-6">
+                <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                  Saketh Reddy Sadu
+                </h1>
+                <h2 className="text-xl lg:text-2xl text-gray-600 leading-relaxed">
+                  DevOps Engineer specializing in Cloud Infrastructure & Security
+                </h2>
+                <p className="text-lg text-gray-700 leading-relaxed max-w-lg">
+                  Experienced in automating cloud infrastructure, implementing security best practices, and optimizing system reliability through modern DevOps methodologies.
+                </p>
+              </div>
+              
+              <div className="flex space-x-6 pt-4">
                 <a
                   href="https://github.com/saketh-reddy"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-gray-900 transform hover:scale-110 transition-all duration-200 opacity-80 hover:opacity-100"
+                  className="text-gray-600 hover:text-gray-900 transform hover:scale-110 transition-all duration-200"
                   aria-label="GitHub"
                 >
-                  <Github size={28} />
+                  <Github size={32} />
                 </a>
                 <a
                   href="mailto:sakethsadu@gmail.com"
-                  className="text-gray-600 hover:text-gray-900 transform hover:scale-110 transition-all duration-200 opacity-80 hover:opacity-100"
+                  className="text-gray-600 hover:text-gray-900 transform hover:scale-110 transition-all duration-200"
                   aria-label="Email"
                 >
-                  <Mail size={28} />
+                  <Mail size={32} />
                 </a>
+              </div>
+              
+              <Button 
+                className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-3 text-lg rounded-md"
+                onClick={() => scrollToSection('contact')}
+              >
+                Get In Touch
+              </Button>
+            </div>
+
+            {/* Right Column - Photo */}
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative">
+                <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden shadow-2xl">
+                  <img 
+                    src="/lovable-uploads/3aca41db-172d-45a7-8c19-79cc8f1f09cc.png" 
+                    alt="Saketh Reddy Sadu" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                {/* Decorative element */}
+                <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-blue-100 rounded-full opacity-60"></div>
+                <div className="absolute -top-4 -left-4 w-16 h-16 bg-gray-100 rounded-full opacity-40"></div>
               </div>
             </div>
           </div>
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-12">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-8 text-center">About Me</h2>
-          <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto text-center">
-            DevOps Engineer with experience in automating cloud infrastructure using IaC tools like Terraform and Jenkins. 
-            Demonstrated expertise in managing secure environments, optimizing cloud expenditures, and enforcing robust IAM policies. 
-            Proven ability in implementing continuous integration pipelines and infrastructure automation to streamline deployments 
-            and enhance system reliability.
-          </p>
+        <section id="about" className="py-20">
+          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">About Me</h2>
+          <div className="max-w-4xl mx-auto">
+            <p className="text-xl text-gray-700 leading-relaxed text-center mb-8">
+              DevOps Engineer with experience in automating cloud infrastructure using IaC tools like Terraform and Jenkins. 
+              Demonstrated expertise in managing secure environments, optimizing cloud expenditures, and enforcing robust IAM policies.
+            </p>
+            <p className="text-lg text-gray-600 leading-relaxed text-center">
+              Proven ability in implementing continuous integration pipelines and infrastructure automation to streamline deployments 
+              and enhance system reliability across AWS, Azure, and GCP platforms.
+            </p>
+          </div>
         </section>
 
         {/* Skills Section */}
