@@ -137,19 +137,9 @@ const Index = () => {
 
   const certifications = [
     {
-      name: "AWS Solutions Architect Associate",
-      status: "In Progress",
-      description: "Comprehensive AWS cloud architecture and best practices"
-    },
-    {
-      name: "Certified Kubernetes Administrator (CKA)",
-      status: "Planned",
-      description: "Container orchestration and cluster management"
-    },
-    {
-      name: "HashiCorp Terraform Associate",
-      status: "Planned", 
-      description: "Infrastructure as Code fundamentals"
+      name: "AWS Cloud Practitioner",
+      status: "Certified",
+      description: "Foundational understanding of AWS cloud concepts and services"
     }
   ];
 
@@ -207,21 +197,18 @@ const Index = () => {
       {/* Container */}
       <div className="max-w-4xl mx-auto px-6">
         {/* Hero Section */}
-        <section id="hero" className="pt-32 pb-20">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center w-full">
-            <div className="flex justify-center md:justify-start">
-              <Avatar className="w-40 h-40 animate-fade-in transition-opacity duration-500">
-                <AvatarImage src="/lovable-uploads/e3d7fb80-60f6-4a27-b75e-aeefb76b6d82.png" alt="Saketh Reddy Sadu" />
-                <AvatarFallback className="text-3xl bg-gray-100 text-gray-600">SR</AvatarFallback>
-              </Avatar>
-            </div>
-            <div className="hidden md:block"></div>
-            <div className="text-center md:text-left">
-              <h1 className="text-5xl font-semibold text-gray-900 mb-4">Saketh Reddy Sadu</h1>
-              <p className="text-xl text-gray-600 mb-6 leading-relaxed max-w-md">
+        <section id="hero" className="pt-24 pb-16">
+          <div className="flex flex-col items-center text-center space-y-8">
+            <Avatar className="w-56 h-56 animate-fade-in transition-opacity duration-500">
+              <AvatarImage src="/lovable-uploads/39d8779b-d282-4de2-b07a-fb1f0350a4d7.png" alt="Saketh Reddy Sadu" />
+              <AvatarFallback className="text-4xl bg-gray-100 text-gray-600">SR</AvatarFallback>
+            </Avatar>
+            <div className="space-y-6">
+              <h1 className="text-6xl font-semibold text-gray-900">Saketh Reddy Sadu</h1>
+              <p className="text-2xl text-gray-600 leading-relaxed max-w-2xl">
                 DevOps Engineer specializing in Cloud Infrastructure & Security
               </p>
-              <div className="flex justify-center md:justify-start space-x-6">
+              <div className="flex justify-center space-x-8 pt-4">
                 <a
                   href="https://github.com/saketh-reddy"
                   target="_blank"
@@ -229,14 +216,14 @@ const Index = () => {
                   className="text-gray-600 hover:text-gray-900 transform hover:scale-110 transition-all duration-200 opacity-80 hover:opacity-100"
                   aria-label="GitHub"
                 >
-                  <Github size={24} />
+                  <Github size={28} />
                 </a>
                 <a
                   href="mailto:sakethsadu@gmail.com"
                   className="text-gray-600 hover:text-gray-900 transform hover:scale-110 transition-all duration-200 opacity-80 hover:opacity-100"
                   aria-label="Email"
                 >
-                  <Mail size={24} />
+                  <Mail size={28} />
                 </a>
               </div>
             </div>
@@ -391,27 +378,25 @@ const Index = () => {
 
         {/* Certifications Section */}
         <section id="certifications" className="py-16">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-12 text-center">Certifications & Learning Path</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {certifications.map((cert, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-200 border-gray-200">
-                <CardHeader className="text-center pb-4">
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Award className="w-8 h-8 text-blue-600" />
-                  </div>
-                  <CardTitle className="text-lg font-semibold text-gray-900">{cert.name}</CardTitle>
-                  <Badge 
-                    variant={cert.status === 'In Progress' ? 'default' : 'outline'} 
-                    className="mx-auto mt-2"
-                  >
-                    {cert.status}
-                  </Badge>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-700 text-sm text-center leading-relaxed">{cert.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+          <h2 className="text-3xl font-semibold text-gray-900 mb-12 text-center">Certifications</h2>
+          <div className="flex justify-center">
+            <Card className="hover:shadow-lg transition-shadow duration-200 border-gray-200 max-w-sm">
+              <CardHeader className="text-center pb-4">
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Award className="w-8 h-8 text-blue-600" />
+                </div>
+                <CardTitle className="text-lg font-semibold text-gray-900">{certifications[0].name}</CardTitle>
+                <Badge 
+                  variant="default"
+                  className="mx-auto mt-2 bg-green-100 text-green-800"
+                >
+                  {certifications[0].status}
+                </Badge>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-700 text-sm text-center leading-relaxed">{certifications[0].description}</p>
+              </CardContent>
+            </Card>
           </div>
         </section>
 
