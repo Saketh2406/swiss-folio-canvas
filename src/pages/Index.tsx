@@ -77,9 +77,17 @@ const Index = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (validateForm()) {
+      // Create mailto link with form data
+      const subject = encodeURIComponent(`Portfolio Contact: Message from ${formData.name}`);
+      const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
+      const mailtoLink = `mailto:sakethsadu@gmail.com?subject=${subject}&body=${body}`;
+      
+      // Open default email client
+      window.location.href = mailtoLink;
+      
       toast({
-        title: "Thank you!",
-        description: "Your message has been sent.",
+        title: "Email client opened!",
+        description: "Your default email application should now be open with the message pre-filled.",
       });
       setFormData({ name: '', email: '', message: '' });
       setFormErrors({ name: '', email: '', message: '' });
@@ -167,7 +175,7 @@ const Index = () => {
       id: 1,
       title: "CloudOps Dashboard & IAM Monitoring Automation (2024)",
       description: "Developed IAM user access monitoring with AWS Lambda and Python to track anomalies and enforce least-privilege roles. Implemented audit log aggregation from IAM and CloudTrail using OpenSearch for real-time access tracking. Integrated multi-factor access audit and notification system using SNS for security rule violations.",
-      link: "https://github.com/saketh-reddy/CloudOpsDashboard",
+      link: "https://github.com/Saketh2406/CloudOpsDashboard",
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop",
       alt: "CloudOps Dashboard interface showing monitoring data"
     },
@@ -175,17 +183,17 @@ const Index = () => {
       id: 2,
       title: "DevOpsified Go Web App on AWS EKS",
       description: "Dockerized a Go-based web application and deployed it on AWS EKS using eksctl and Kubernetes best practices. Configured Deployment, Service, and Ingress resources with NGINX Ingress Controller and AWS Load Balancer. Streamlined infrastructure setup with YAML manifests and exposed the app via a custom domain.",
-      link: "https://github.com/saketh-reddy/GoWebAppEKS",
+      link: "https://github.com/Saketh2406/GoWebAppEKS",
       image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=400&fit=crop",
       alt: "Kubernetes deployment dashboard showing EKS cluster"
     },
     {
       id: 3,
-      title: "Terraform Multi-Cloud Infrastructure",
-      description: "Building a comprehensive multi-cloud infrastructure management system using Terraform. Implementing automated provisioning across AWS, Azure, and GCP with unified monitoring and cost optimization. Features include automated scaling, security compliance, and disaster recovery mechanisms.",
-      link: "https://github.com/saketh-reddy/terraform-multicloud",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=400&fit=crop",
-      alt: "Infrastructure as Code visualization with Terraform",
+      title: "Southwest Airlines Intelligent Operations Platform",
+      description: "Designing a cloud-native operations command center platform using AWS services to improve Southwest Airlines' operational efficiency. Implementing real-time data analytics with AWS Kinesis, secure microservices architecture with EKS, and automated incident response workflows. Features include predictive maintenance alerts, flight optimization algorithms, and comprehensive security monitoring with CloudTrail and GuardDuty.",
+      link: "https://github.com/Saketh2406/southwest-ops-platform",
+      image: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=800&h=400&fit=crop",
+      alt: "Airline operations control center with multiple monitoring screens",
       inProgress: true
     }
   ];
