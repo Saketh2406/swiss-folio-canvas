@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useToast } from "@/hooks/use-toast";
-import { Github, Mail, ExternalLink, Award, Users, Code2, Cloud, Shield, Settings, Phone, ChevronLeft, ChevronRight } from "lucide-react";
+import { Github, Mail, ExternalLink, Award, Users, Code2, Cloud, Shield, Settings, Phone, ChevronLeft, ChevronRight, Linkedin } from "lucide-react";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('hero');
@@ -650,73 +650,57 @@ const Index = () => {
 
         {/* Contact Section */}
         <section id="contact" className="py-12 mb-20">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-8 text-center">Get In Touch</h2>
+          <h2 className="text-3xl font-semibold text-gray-900 mb-8 text-center">Let's Connect</h2>
           <p className="text-lg text-gray-700 text-center mb-12">
-            I'm always open to discussing new opportunities or interesting projects. Feel free to say hello!
+            Feel free to reach out through any of these channels
           </p>
-          <form onSubmit={handleSubmit} className="max-w-lg mx-auto space-y-6">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-900 mb-2">
-                Name *
-              </label>
-              <Input
-                id="name"
-                type="text"
-                placeholder="Your Name"
-                value={formData.name}
-                onChange={(e) => handleInputChange('name', e.target.value)}
-                className={`${formErrors.name ? 'border-red-500' : 'border-gray-300'} focus:ring-2 focus:ring-blue-500`}
-                required
-                aria-label="Name"
-              />
-              {formErrors.name && (
-                <p className="text-red-500 text-sm mt-1">{formErrors.name}</p>
-              )}
+          <div className="max-w-lg mx-auto">
+            <div className="space-y-6">
+              {/* Email */}
+              <div className="flex items-center justify-center space-x-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+                <Mail className="w-6 h-6 text-gray-600" />
+                <div className="text-center">
+                  <p className="text-sm text-gray-500 mb-1">Email</p>
+                  <a 
+                    href="mailto:sakethsadu@gmail.com"
+                    className="text-lg font-medium text-gray-900 hover:text-blue-600 transition-colors duration-200"
+                  >
+                    sakethsadu@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              {/* Phone */}
+              <div className="flex items-center justify-center space-x-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+                <Phone className="w-6 h-6 text-gray-600" />
+                <div className="text-center">
+                  <p className="text-sm text-gray-500 mb-1">Phone</p>
+                  <a 
+                    href="tel:+13143350950"
+                    className="text-lg font-medium text-gray-900 hover:text-blue-600 transition-colors duration-200"
+                  >
+                    +1 (314) 335-0950
+                  </a>
+                </div>
+              </div>
+
+              {/* LinkedIn */}
+              <div className="flex items-center justify-center space-x-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+                <Linkedin className="w-6 h-6 text-gray-600" />
+                <div className="text-center">
+                  <p className="text-sm text-gray-500 mb-1">LinkedIn</p>
+                  <a 
+                    href="https://linkedin.com/in/saketh-reddy-sadu"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-lg font-medium text-gray-900 hover:text-blue-600 transition-colors duration-200"
+                  >
+                    linkedin.com/in/saketh-reddy-sadu
+                  </a>
+                </div>
+              </div>
             </div>
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-900 mb-2">
-                Email *
-              </label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="you@example.com"
-                value={formData.email}
-                onChange={(e) => handleInputChange('email', e.target.value)}
-                className={`${formErrors.email ? 'border-red-500' : 'border-gray-300'} focus:ring-2 focus:ring-blue-500`}
-                required
-                aria-label="Email"
-              />
-              {formErrors.email && (
-                <p className="text-red-500 text-sm mt-1">{formErrors.email}</p>
-              )}
-            </div>
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-900 mb-2">
-                Message *
-              </label>
-              <Textarea
-                id="message"
-                placeholder="Your message (at least 10 characters)"
-                rows={4}
-                value={formData.message}
-                onChange={(e) => handleInputChange('message', e.target.value)}
-                className={`${formErrors.message ? 'border-red-500' : 'border-gray-300'} focus:ring-2 focus:ring-blue-500 resize-none`}
-                required
-              />
-              {formErrors.message && (
-                <p className="text-red-500 text-sm mt-1">{formErrors.message}</p>
-              )}
-            </div>
-            <Button
-              type="submit"
-              disabled={!isFormValid()}
-              className="w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-              aria-label="Send Message"
-            >
-              Send Message
-            </Button>
-          </form>
+          </div>
         </section>
 
         {/* Footer */}
