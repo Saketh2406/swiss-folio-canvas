@@ -364,27 +364,29 @@ const Index = () => {
               <h3 className="text-xl font-semibold text-gray-800 text-center">Amazon Web Services (AWS)</h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
                 {[
-                  { name: 'IAM', icon: <Shield className="w-6 h-6" />, color: 'bg-blue-500' },
-                  { name: 'EC2', icon: <Server className="w-6 h-6" />, color: 'bg-orange-500' },
-                  { name: 'S3', icon: <Database className="w-6 h-6" />, color: 'bg-green-500' },
-                  { name: 'VPC', icon: <Network className="w-6 h-6" />, color: 'bg-purple-500' },
-                  { name: 'RDS', icon: <Database className="w-6 h-6" />, color: 'bg-indigo-500' },
-                  { name: 'Lambda', icon: <Zap className="w-6 h-6" />, color: 'bg-yellow-500' },
-                  { name: 'CloudFormation', icon: <Layers className="w-6 h-6" />, color: 'bg-red-500' },
-                  { name: 'CloudWatch', icon: <Activity className="w-6 h-6" />, color: 'bg-pink-500' },
-                  { name: 'SNS', icon: <Mail className="w-6 h-6" />, color: 'bg-teal-500' },
-                  { name: 'SQS', icon: <Box className="w-6 h-6" />, color: 'bg-cyan-500' },
-                  { name: 'EKS', icon: <Settings className="w-6 h-6" />, color: 'bg-emerald-500' },
-                  { name: 'ELB', icon: <Network className="w-6 h-6" />, color: 'bg-amber-500' },
-                  { name: 'Route 53', icon: <Search className="w-6 h-6" />, color: 'bg-rose-500' },
-                  { name: 'CloudTrail', icon: <BarChart3 className="w-6 h-6" />, color: 'bg-violet-500' }
+                  { name: 'IAM', icon: <Shield className="w-8 h-8" />, borderColor: 'border-blue-500' },
+                  { name: 'EC2', icon: <Server className="w-8 h-8" />, borderColor: 'border-orange-500' },
+                  { name: 'S3', icon: <Database className="w-8 h-8" />, borderColor: 'border-green-500' },
+                  { name: 'VPC', icon: <Network className="w-8 h-8" />, borderColor: 'border-purple-500' },
+                  { name: 'RDS', icon: <Database className="w-8 h-8" />, borderColor: 'border-indigo-500' },
+                  { name: 'Lambda', icon: <Zap className="w-8 h-8" />, borderColor: 'border-yellow-500' },
+                  { name: 'CloudFormation', icon: <Layers className="w-8 h-8" />, borderColor: 'border-red-500' },
+                  { name: 'CloudWatch', icon: <Activity className="w-8 h-8" />, borderColor: 'border-pink-500' },
+                  { name: 'SNS', icon: <Mail className="w-8 h-8" />, borderColor: 'border-teal-500' },
+                  { name: 'SQS', icon: <Box className="w-8 h-8" />, borderColor: 'border-cyan-500' },
+                  { name: 'EKS', icon: <Settings className="w-8 h-8" />, borderColor: 'border-emerald-500' },
+                  { name: 'ELB', icon: <Network className="w-8 h-8" />, borderColor: 'border-amber-500' },
+                  { name: 'Route 53', icon: <Search className="w-8 h-8" />, borderColor: 'border-rose-500' },
+                  { name: 'CloudTrail', icon: <BarChart3 className="w-8 h-8" />, borderColor: 'border-violet-500' }
                 ].map((skill) => (
                   <div
                     key={skill.name}
-                    className={`${skill.color} text-white rounded-2xl p-4 flex flex-col items-center space-y-2 hover:scale-105 transition-transform duration-200 cursor-default`}
+                    className={`bg-white border-2 ${skill.borderColor} rounded-2xl p-6 flex flex-col items-center space-y-3 hover:scale-105 transition-transform duration-200 cursor-default shadow-sm`}
                   >
-                    {skill.icon}
-                    <span className="text-sm font-medium text-center">{skill.name}</span>
+                    <div className="text-gray-700">
+                      {skill.icon}
+                    </div>
+                    <span className="text-sm font-medium text-gray-900 text-center">{skill.name}</span>
                   </div>
                 ))}
               </div>
@@ -396,16 +398,18 @@ const Index = () => {
                 <h3 className="text-xl font-semibold text-gray-800 text-center">Microsoft Azure</h3>
                 <div className="grid grid-cols-1 gap-4">
                   {[
-                    { name: 'Azure AD (Entra ID)', icon: <Shield className="w-6 h-6" />, color: 'bg-blue-600' },
-                    { name: 'ADFS', icon: <Users className="w-6 h-6" />, color: 'bg-indigo-600' },
-                    { name: 'SSO', icon: <ShieldCheck className="w-6 h-6" />, color: 'bg-purple-600' }
+                    { name: 'Azure AD (Entra ID)', icon: <Shield className="w-8 h-8" />, borderColor: 'border-blue-600' },
+                    { name: 'ADFS', icon: <Users className="w-8 h-8" />, borderColor: 'border-indigo-600' },
+                    { name: 'SSO', icon: <ShieldCheck className="w-8 h-8" />, borderColor: 'border-purple-600' }
                   ].map((skill) => (
                     <div
                       key={skill.name}
-                      className={`${skill.color} text-white rounded-2xl p-4 flex flex-col items-center space-y-2 hover:scale-105 transition-transform duration-200 cursor-default`}
+                      className={`bg-white border-2 ${skill.borderColor} rounded-2xl p-6 flex flex-col items-center space-y-3 hover:scale-105 transition-transform duration-200 cursor-default shadow-sm`}
                     >
-                      {skill.icon}
-                      <span className="text-sm font-medium text-center">{skill.name}</span>
+                      <div className="text-gray-700">
+                        {skill.icon}
+                      </div>
+                      <span className="text-sm font-medium text-gray-900 text-center">{skill.name}</span>
                     </div>
                   ))}
                 </div>
@@ -414,15 +418,17 @@ const Index = () => {
                 <h3 className="text-xl font-semibold text-gray-800 text-center">Google Cloud Platform (GCP)</h3>
                 <div className="grid grid-cols-1 gap-4">
                   {[
-                    { name: 'Compute Engine', icon: <Server className="w-6 h-6" />, color: 'bg-green-600' },
-                    { name: 'IAM', icon: <Shield className="w-6 h-6" />, color: 'bg-emerald-600' }
+                    { name: 'Compute Engine', icon: <Server className="w-8 h-8" />, borderColor: 'border-green-600' },
+                    { name: 'IAM', icon: <Shield className="w-8 h-8" />, borderColor: 'border-emerald-600' }
                   ].map((skill) => (
                     <div
                       key={skill.name}
-                      className={`${skill.color} text-white rounded-2xl p-4 flex flex-col items-center space-y-2 hover:scale-105 transition-transform duration-200 cursor-default`}
+                      className={`bg-white border-2 ${skill.borderColor} rounded-2xl p-6 flex flex-col items-center space-y-3 hover:scale-105 transition-transform duration-200 cursor-default shadow-sm`}
                     >
-                      {skill.icon}
-                      <span className="text-sm font-medium text-center">{skill.name}</span>
+                      <div className="text-gray-700">
+                        {skill.icon}
+                      </div>
+                      <span className="text-sm font-medium text-gray-900 text-center">{skill.name}</span>
                     </div>
                   ))}
                 </div>
@@ -434,21 +440,23 @@ const Index = () => {
               <h3 className="text-xl font-semibold text-gray-800 text-center">Infrastructure as Code & DevOps</h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
                 {[
-                  { name: 'Terraform', icon: <Layers className="w-6 h-6" />, color: 'bg-purple-600' },
-                  { name: 'CloudFormation', icon: <Cloud className="w-6 h-6" />, color: 'bg-orange-600' },
-                  { name: 'Ansible', icon: <Settings className="w-6 h-6" />, color: 'bg-red-600' },
-                  { name: 'Docker', icon: <Box className="w-6 h-6" />, color: 'bg-blue-600' },
-                  { name: 'Kubernetes', icon: <Network className="w-6 h-6" />, color: 'bg-indigo-600' },
-                  { name: 'Jenkins', icon: <GitBranch className="w-6 h-6" />, color: 'bg-gray-600' },
-                  { name: 'GitHub Actions', icon: <Code2 className="w-6 h-6" />, color: 'bg-green-600' },
-                  { name: 'GitLab CI/CD', icon: <GitBranch className="w-6 h-6" />, color: 'bg-orange-500' }
+                  { name: 'Terraform', icon: <Layers className="w-8 h-8" />, borderColor: 'border-purple-600' },
+                  { name: 'CloudFormation', icon: <Cloud className="w-8 h-8" />, borderColor: 'border-orange-600' },
+                  { name: 'Ansible', icon: <Settings className="w-8 h-8" />, borderColor: 'border-red-600' },
+                  { name: 'Docker', icon: <Box className="w-8 h-8" />, borderColor: 'border-blue-600' },
+                  { name: 'Kubernetes', icon: <Network className="w-8 h-8" />, borderColor: 'border-indigo-600' },
+                  { name: 'Jenkins', icon: <GitBranch className="w-8 h-8" />, borderColor: 'border-gray-600' },
+                  { name: 'GitHub Actions', icon: <Code2 className="w-8 h-8" />, borderColor: 'border-green-600' },
+                  { name: 'GitLab CI/CD', icon: <GitBranch className="w-8 h-8" />, borderColor: 'border-orange-500' }
                 ].map((skill) => (
                   <div
                     key={skill.name}
-                    className={`${skill.color} text-white rounded-2xl p-4 flex flex-col items-center space-y-2 hover:scale-105 transition-transform duration-200 cursor-default`}
+                    className={`bg-white border-2 ${skill.borderColor} rounded-2xl p-6 flex flex-col items-center space-y-3 hover:scale-105 transition-transform duration-200 cursor-default shadow-sm`}
                   >
-                    {skill.icon}
-                    <span className="text-sm font-medium text-center">{skill.name}</span>
+                    <div className="text-gray-700">
+                      {skill.icon}
+                    </div>
+                    <span className="text-sm font-medium text-gray-900 text-center">{skill.name}</span>
                   </div>
                 ))}
               </div>
@@ -459,18 +467,20 @@ const Index = () => {
               <h3 className="text-xl font-semibold text-gray-800 text-center">Programming & Scripting</h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 {[
-                  { name: 'Python', icon: <Code2 className="w-6 h-6" />, color: 'bg-yellow-600' },
-                  { name: 'Bash', icon: <Terminal className="w-6 h-6" />, color: 'bg-gray-700' },
-                  { name: 'PowerShell', icon: <Terminal className="w-6 h-6" />, color: 'bg-blue-700' },
-                  { name: 'Linux Administration', icon: <Monitor className="w-6 h-6" />, color: 'bg-green-700' },
-                  { name: 'Git', icon: <GitBranch className="w-6 h-6" />, color: 'bg-orange-700' }
+                  { name: 'Python', icon: <Code2 className="w-8 h-8" />, borderColor: 'border-yellow-600' },
+                  { name: 'Bash', icon: <Terminal className="w-8 h-8" />, borderColor: 'border-gray-700' },
+                  { name: 'PowerShell', icon: <Terminal className="w-8 h-8" />, borderColor: 'border-blue-700' },
+                  { name: 'Linux Administration', icon: <Monitor className="w-8 h-8" />, borderColor: 'border-green-700' },
+                  { name: 'Git', icon: <GitBranch className="w-8 h-8" />, borderColor: 'border-orange-700' }
                 ].map((skill) => (
                   <div
                     key={skill.name}
-                    className={`${skill.color} text-white rounded-2xl p-4 flex flex-col items-center space-y-2 hover:scale-105 transition-transform duration-200 cursor-default`}
+                    className={`bg-white border-2 ${skill.borderColor} rounded-2xl p-6 flex flex-col items-center space-y-3 hover:scale-105 transition-transform duration-200 cursor-default shadow-sm`}
                   >
-                    {skill.icon}
-                    <span className="text-sm font-medium text-center">{skill.name}</span>
+                    <div className="text-gray-700">
+                      {skill.icon}
+                    </div>
+                    <span className="text-sm font-medium text-gray-900 text-center">{skill.name}</span>
                   </div>
                 ))}
               </div>
@@ -481,19 +491,21 @@ const Index = () => {
               <h3 className="text-xl font-semibold text-gray-800 text-center">Monitoring & Observability</h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 {[
-                  { name: 'OpenSearch', icon: <Search className="w-6 h-6" />, color: 'bg-teal-600' },
-                  { name: 'Prometheus', icon: <BarChart3 className="w-6 h-6" />, color: 'bg-orange-600' },
-                  { name: 'Grafana', icon: <Activity className="w-6 h-6" />, color: 'bg-orange-500' },
-                  { name: 'ELK Stack', icon: <Database className="w-6 h-6" />, color: 'bg-yellow-700' },
-                  { name: 'Nginx', icon: <Server className="w-6 h-6" />, color: 'bg-green-600' },
-                  { name: 'Load Balancing', icon: <Network className="w-6 h-6" />, color: 'bg-purple-600' }
+                  { name: 'OpenSearch', icon: <Search className="w-8 h-8" />, borderColor: 'border-teal-600' },
+                  { name: 'Prometheus', icon: <BarChart3 className="w-8 h-8" />, borderColor: 'border-orange-600' },
+                  { name: 'Grafana', icon: <Activity className="w-8 h-8" />, borderColor: 'border-orange-500' },
+                  { name: 'ELK Stack', icon: <Database className="w-8 h-8" />, borderColor: 'border-yellow-700' },
+                  { name: 'Nginx', icon: <Server className="w-8 h-8" />, borderColor: 'border-green-600' },
+                  { name: 'Load Balancing', icon: <Network className="w-8 h-8" />, borderColor: 'border-purple-600' }
                 ].map((skill) => (
                   <div
                     key={skill.name}
-                    className={`${skill.color} text-white rounded-2xl p-4 flex flex-col items-center space-y-2 hover:scale-105 transition-transform duration-200 cursor-default`}
+                    className={`bg-white border-2 ${skill.borderColor} rounded-2xl p-6 flex flex-col items-center space-y-3 hover:scale-105 transition-transform duration-200 cursor-default shadow-sm`}
                   >
-                    {skill.icon}
-                    <span className="text-sm font-medium text-center">{skill.name}</span>
+                    <div className="text-gray-700">
+                      {skill.icon}
+                    </div>
+                    <span className="text-sm font-medium text-gray-900 text-center">{skill.name}</span>
                   </div>
                 ))}
               </div>
@@ -504,19 +516,21 @@ const Index = () => {
               <h3 className="text-xl font-semibold text-gray-800 text-center">Security & Compliance</h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 {[
-                  { name: 'RBAC', icon: <Shield className="w-6 h-6" />, color: 'bg-red-600' },
-                  { name: 'MFA', icon: <ShieldCheck className="w-6 h-6" />, color: 'bg-red-500' },
-                  { name: 'PIM', icon: <Users className="w-6 h-6" />, color: 'bg-pink-600' },
-                  { name: 'Conditional Access', icon: <Shield className="w-6 h-6" />, color: 'bg-rose-600' },
-                  { name: 'Backup & Disaster Recovery', icon: <Database className="w-6 h-6" />, color: 'bg-indigo-700' },
-                  { name: 'Incident Response', icon: <Activity className="w-6 h-6" />, color: 'bg-red-700' }
+                  { name: 'RBAC', icon: <Shield className="w-8 h-8" />, borderColor: 'border-red-600' },
+                  { name: 'MFA', icon: <ShieldCheck className="w-8 h-8" />, borderColor: 'border-red-500' },
+                  { name: 'PIM', icon: <Users className="w-8 h-8" />, borderColor: 'border-pink-600' },
+                  { name: 'Conditional Access', icon: <Shield className="w-8 h-8" />, borderColor: 'border-rose-600' },
+                  { name: 'Backup & Disaster Recovery', icon: <Database className="w-8 h-8" />, borderColor: 'border-indigo-700' },
+                  { name: 'Incident Response', icon: <Activity className="w-8 h-8" />, borderColor: 'border-red-700' }
                 ].map((skill) => (
                   <div
                     key={skill.name}
-                    className={`${skill.color} text-white rounded-2xl p-4 flex flex-col items-center space-y-2 hover:scale-105 transition-transform duration-200 cursor-default`}
+                    className={`bg-white border-2 ${skill.borderColor} rounded-2xl p-6 flex flex-col items-center space-y-3 hover:scale-105 transition-transform duration-200 cursor-default shadow-sm`}
                   >
-                    {skill.icon}
-                    <span className="text-sm font-medium text-center">{skill.name}</span>
+                    <div className="text-gray-700">
+                      {skill.icon}
+                    </div>
+                    <span className="text-sm font-medium text-gray-900 text-center">{skill.name}</span>
                   </div>
                 ))}
               </div>
@@ -527,17 +541,19 @@ const Index = () => {
               <h3 className="text-xl font-semibold text-gray-800 text-center">Project Management & Collaboration</h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 {[
-                  { name: 'Agile/Scrum', icon: <Users className="w-6 h-6" />, color: 'bg-gray-600' },
-                  { name: 'Confluence', icon: <Settings className="w-6 h-6" />, color: 'bg-blue-600' },
-                  { name: 'JIRA', icon: <BarChart3 className="w-6 h-6" />, color: 'bg-blue-700' },
-                  { name: 'ServiceNow', icon: <Settings className="w-6 h-6" />, color: 'bg-green-600' }
+                  { name: 'Agile/Scrum', icon: <Users className="w-8 h-8" />, borderColor: 'border-gray-600' },
+                  { name: 'Confluence', icon: <Settings className="w-8 h-8" />, borderColor: 'border-blue-600' },
+                  { name: 'JIRA', icon: <BarChart3 className="w-8 h-8" />, borderColor: 'border-blue-700' },
+                  { name: 'ServiceNow', icon: <Settings className="w-8 h-8" />, borderColor: 'border-green-600' }
                 ].map((skill) => (
                   <div
                     key={skill.name}
-                    className={`${skill.color} text-white rounded-2xl p-4 flex flex-col items-center space-y-2 hover:scale-105 transition-transform duration-200 cursor-default`}
+                    className={`bg-white border-2 ${skill.borderColor} rounded-2xl p-6 flex flex-col items-center space-y-3 hover:scale-105 transition-transform duration-200 cursor-default shadow-sm`}
                   >
-                    {skill.icon}
-                    <span className="text-sm font-medium text-center">{skill.name}</span>
+                    <div className="text-gray-700">
+                      {skill.icon}
+                    </div>
+                    <span className="text-sm font-medium text-gray-900 text-center">{skill.name}</span>
                   </div>
                 ))}
               </div>
