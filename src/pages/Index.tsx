@@ -7,7 +7,34 @@ import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useToast } from "@/hooks/use-toast";
-import { Github, Mail, ExternalLink, Award, Users, Code2, Cloud, Shield, Settings, Phone, ChevronLeft, ChevronRight, Linkedin } from "lucide-react";
+import { 
+  Github, 
+  Mail, 
+  ExternalLink, 
+  Award, 
+  Users, 
+  Code2, 
+  Cloud, 
+  Shield, 
+  Settings, 
+  Phone, 
+  ChevronLeft, 
+  ChevronRight, 
+  Linkedin,
+  Server,
+  Database,
+  Network,
+  Zap,
+  Box,
+  Layers,
+  GitBranch,
+  Terminal,
+  Monitor,
+  BarChart3,
+  Activity,
+  Search,
+  ShieldCheck
+} from "lucide-react";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('hero');
